@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+void print(void);
 int main()
 {
-    float x1,x2,y1,y2;
-    printf("Enter the coordinates of 1st point:");
-    scanf("%f %f",&x1,&y1);
-    printf("Enter the coordinates of 2nd point:");
-    scanf("%f %f",&x2,&y2);
-    float dist;
-    dist=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
-    printf("The calculated distance is: %f",dist);
+    printf("\n First call of print: ");
+    print();
+    printf("\n Second call of print: ");
+    print();
+    printf("\n Third call of print: ");
+    print();
     return 0;
+}
+void print(void){
+    static int x;
+    int y=0;
+    printf("\n Value of static integer variable x: %d",x);
+    printf("\n Value of y: %d",y); x++;y++;
 }
